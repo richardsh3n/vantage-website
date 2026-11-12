@@ -1,6 +1,7 @@
 const welcome = document.querySelector('.welcome');
 const stage = welcome.querySelector('.welcome-stage');
 const doors = welcome.querySelector('.brand-doors');
+const lockup = welcome.querySelector('.welcome-lockup');
 const motion = matchMedia('(prefers-reduced-motion: no-preference) and (min-height: 490px)');
 let frame;
 let start = 0;
@@ -17,6 +18,7 @@ function update() {
   welcome.style.setProperty('--welcome-progress', progress);
   welcome.style.setProperty('--welcome-reveal', reveal);
   doors.inert = motion.matches && reveal < .88;
+  lockup.inert = motion.matches && reveal >= .62;
   welcome.querySelector('.welcome-enter').inert = motion.matches && reveal >= .88;
 }
 
