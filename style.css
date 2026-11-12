@@ -389,3 +389,5 @@ body{background:#f7f7f3}
  .welcome-lockup{width:calc(100% - 42px)}
 }
 @media(max-width:390px){.mast nav{column-gap:8px}.deliverable-visual ol{grid-template-columns:1fr}}
+
+@media(min-width:761px){.home-features{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}}
