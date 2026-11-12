@@ -13,7 +13,9 @@ form.addEventListener('submit', event => {
   const body = encodeURIComponent([
     '称呼：' + data.get('name'),
     '联系邮箱：' + data.get('email'),
+    '品牌或公司：' + (data.get('company') || '待补充'),
     '计划时间：' + (data.get('timing') || '待定'),
+    '预算区间：' + (data.get('budget') || '待定'),
     '',
     data.get('details'),
   ].join('\n'));
