@@ -19,6 +19,19 @@ let position = -1;
 const firstInside = 2;
 let activeTurn;
 let pointer;
+const queuedImages = new Map();
+
+function preloadNearby() {
+  const center = position < 0 ? firstInside : position;
+  const nearby = leaves.slice(Math.max(0, center - 2), center + 6);
+  for (const page of nearby) {
+    if (!page || queuedImages.has(page.url)) continue;
+    const image = new Image();
+    image.src = page.url;
+    queuedImages.set(page.url, image);
+    image.decode?.().catch(() => {});
+  }
+}
 
 function pageCount() {
   return singlePage.matches ? 1 : 2;
@@ -44,6 +57,7 @@ function leaf(index, decorative = false) {
 function render() {
   const count = pageCount();
   display.classList.toggle('book-closed', position < 0);
+  preloadNearby();
   if (position < 0) {
     const cover = document.createElement('button');
     cover.type = 'button';
