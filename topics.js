@@ -32,6 +32,18 @@ if (controls) {
   category.addEventListener('change', filterTopics);
   filterTopics();
 
-  const selectedTopic = document.getElementById(location.hash.slice(1));
-  if (selectedTopic?.matches('.topic-card')) selectedTopic.open = true;
+  function openLinkedTopic() {
+    const selectedTopic = document.getElementById(location.hash.slice(1));
+    if (!selectedTopic?.matches('.topic-card')) return;
+    if (selectedTopic.hidden) {
+      search.value = '';
+      category.value = '';
+      filterTopics();
+    }
+    selectedTopic.open = true;
+    selectedTopic.scrollIntoView({ block: 'start' });
+  }
+
+  window.addEventListener('hashchange', openLinkedTopic);
+  openLinkedTopic();
 }
