@@ -442,3 +442,34 @@ body{background:#f4f5f3}
 .founder-copy{max-width:39em;line-height:1.85}
 .founder-copy p:last-child{margin-bottom:0}
 @media(max-width:700px){.founder-story{grid-template-columns:1fr}}
+
+/* Cross-border production and editorial */
+body:has(.studio-hero,.studio-text-intro){--paper:#f5f3ef;--ink:#1c1c19;--muted:#55564e;--line:#d7d4ca}
+.mast nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35em}
+.studio-hero{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,5vw,88px);align-items:center;padding-block:clamp(36px,6vw,100px)}
+.studio-lead h1,.studio-text-intro h1{font-size:clamp(2.7rem,5.6vw,6.25rem);line-height:1.07;letter-spacing:-.055em;margin-bottom:24px}
+.studio-lead>p:not(.eyebrow),.studio-text-intro>p:not(.eyebrow){font-size:clamp(1rem,1.4vw,1.25rem);color:var(--muted);max-width:32em}
+.studio-actions{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:30px}
+.studio-hero figure,.studio-profile figure{margin:0;min-width:0}
+.studio-hero figure img,.studio-profile figure img{display:block;width:100%;object-fit:cover}
+.studio-hero figure img{aspect-ratio:4/3;object-position:center}
+.studio-profile figure img{aspect-ratio:3/2}
+.studio-hero figcaption,.studio-profile figcaption{font-size:.8rem;color:var(--muted);margin-top:8px}
+.studio-section,.studio-contact,.studio-notes article{padding-block:clamp(34px,5vw,74px);border-top:1px solid var(--line)}
+.studio-duo,.studio-profile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,6vw,105px)}
+.studio-profile{align-items:center}
+.studio-duo h2,.studio-profile h2,.studio-contact h2,.studio-notes h2{font-size:clamp(1.75rem,3vw,3.3rem);margin-bottom:18px;line-height:1.18}
+.studio-duo p:not(.eyebrow),.studio-profile p:not(.eyebrow),.studio-contact p,.studio-notes article p:not(.eyebrow){max-width:38em;color:var(--muted)}
+.studio-services ul{padding-left:1.25rem;margin:18px 0 24px;color:var(--muted)}
+.studio-services li+li{margin-top:6px}
+.studio-details{margin-top:32px}
+.studio-contact{display:flex;justify-content:space-between;gap:24px;align-items:center}
+.studio-contact p{margin-bottom:0}
+.studio-text-intro{padding-block:clamp(36px,7vw,110px)}
+.studio-notes article{max-width:800px}
+@media(max-width:760px){
+  .studio-hero,.studio-duo,.studio-profile{grid-template-columns:minmax(0,1fr)}
+  .studio-contact{align-items:flex-start;flex-direction:column}
+  .studio-services article+article{border-top:1px solid var(--line);padding-top:28px}
+  .studio-hero figure img{aspect-ratio:4/3}
+}

@@ -8,7 +8,7 @@ form.hidden = false;
 form.addEventListener('submit', event => {
   event.preventDefault();
   const data = new FormData(form);
-  const selected = data.get('topic') || '项目洽谈';
+  const selected = topicField.value ? topicField.selectedOptions[0].textContent : '项目洽谈';
   const subject = encodeURIComponent('VANTAGE / ' + selected);
   const body = encodeURIComponent([
     '称呼：' + data.get('name'),
