@@ -434,3 +434,11 @@ body{background:#f4f5f3}
 .lifestyle-series p{max-width:38em;margin-bottom:12px;color:var(--muted)}
 .topic-card{scroll-margin-top:24px}
 @media(max-width:700px){.lifestyle-intro,.lifestyle-series article{grid-template-columns:1fr}}
+
+.welcome-about{display:inline-flex;gap:.65em;margin-top:.9rem;font-size:.83rem;color:#344751;text-underline-offset:4px}
+.founder-story{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,8vw,112px);padding-block:clamp(42px,7vw,92px);border-block:1px solid var(--line);margin-top:clamp(35px,6vw,74px);scroll-margin-top:22px}
+.founder-story h2{max-width:11em;font-size:clamp(2rem,4.4vw,4.1rem);line-height:1.22}
+.founder-byline{color:var(--muted);margin:20px 0 0}
+.founder-copy{max-width:39em;line-height:1.85}
+.founder-copy p:last-child{margin-bottom:0}
+@media(max-width:700px){.founder-story{grid-template-columns:1fr}}
